@@ -1,3 +1,18 @@
+# Data
+
+### [DKTC (Dataset of Korean Threatening Conversations)](https://github.com/tunib-ai/DKTC)
+
+데이터셋 구성
+
+|클래스|Class No.|# Training|# Test |
+|:----:|:------:|:------:|:------------:|
+|협박|00|896|100|
+|갈취|01|981|100|
+|직장 내 괴롭힘|02|979|100|
+|기타 괴롭힘|03|1,094|100|
+|일반|04| - |100|
+
+
 # Data Augmentation
 
 ### 1. [EDA: Easy Data Augmentation Techniques for Boosting Performance on Text Classification Tasks](https://github.com/jasonwei20/eda_nlp)
