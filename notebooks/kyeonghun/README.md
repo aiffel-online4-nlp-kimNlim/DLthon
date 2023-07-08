@@ -19,6 +19,9 @@
 
 * 문장을 특정 언어로 번역한 이후 번역된 문장을 다시 원래 언어로 다시 번역하는 방법
 * 이 프로젝트에서는 영어와 일본어로만 테스트함
+* `pororo`라이브러리를 사용해서 하려고 했지만 `torch`버전이 맞지않아서 설치 실패
+* `deep-translator`라이브러리(구글번역) 사용해서 진행
+* duplicate 검사 해본 결과 겹치게 생성된 문장은 10% 미만임
 
 ### 3. MixText
 
@@ -30,6 +33,45 @@
 
 
 # Base Model
+
+### 프리트레인된 모델을 사용하기 전에 먼저 작은 모델로 테스트
+
+#### 모델 종류
+
+##### CNN
+> * Embedding Layer
+> * 2 One-Dimension Convolution Layers (Dropout: 50%)
+> * 1-Dimension Global Max Pooling
+> * Concatenate
+> * Fully Connected Layer
+> * 1-Dimension Fully Connected Layer
+> * Softmax Activation
+
+##### BiLSTM
+> * Embedding Layer
+> * Bidirectional LSTM (Dropout: 10%)
+> * 1-Dimension Global Max Pooling
+> * 1-Dimension Fully Connected Layer
+> * Softmax Activation
+
+##### BiLSTM + LSTM
+> * Embedding Layer
+> * Bidirectional LSTM + Residual Connection from Embedding Layer
+> * Forward LSTM
+> * 1-Dimension Global Max Pooling
+> * 1-Dimension Fully Connected Layer (Dropout: 50%)
+> * Softmax Activation
+
+##### CNN + BiLSTM + LSTM
+> * Embedding Layer
+> * 1-Dimension Convolution Layer (Dropout: 50%)
+> * Bidirectional LSTM + Residual Connection from Embedding Layer
+> * Forward LSTM
+> * 1-Dimension Global Max Pooling
+> * 1-Dimension Fully Connected Layer (Dropout: 50%)
+> * Softmax Activation
+
+--------
 
 |모델|Loss|Accuracy|
 |:---:|---|:---:|
