@@ -1,3 +1,29 @@
+# Data
+
+### [DKTC (Dataset of Korean Threatening Conversations)](https://github.com/tunib-ai/DKTC)
+
+데이터셋 구성
+
+|클래스|Class No.|# Training|# Test |
+|:----:|:------:|:------:|:------------:|
+|협박|00|896|100|
+|갈취|01|981|100|
+|직장 내 괴롭힘|02|979|100|
+|기타 괴롭힘|03|1,094|100|
+|일반|04| - |100|
+
+### Preprocess
+
+#### 데이터 정제 (정규식 사용)
+
+* 알파벳, 문장부호, 한글 제외는 제거
+* 문장부호 양 옆에 공백 추가
+* 불필요한 공백 제거
+
+#### 토큰화
+
+* `KoNLPy`의 `mecab`클래스를 사용
+
 # Data Augmentation
 
 ### 1. [EDA: Easy Data Augmentation Techniques for Boosting Performance on Text Classification Tasks](https://github.com/jasonwei20/eda_nlp)
@@ -73,12 +99,14 @@
 
 --------
 
-|모델|Loss|Accuracy|
-|:---:|---|:---:|
-|CNN|0.4975|0.8212|
-|BiLSTM|0.7638|0.7627|
-|BiLSTM + LSTM|0.6237|0.8291|
-|CNN + BiLSTM + LSTM|0.6968|0.8038|
+|모델|Loss|Accuracy|weighted f1|macro f1|
+|:---:|---|---|---|:---:|
+|CNN|0.4469|**0.8560**|**0.8557**|**0.8579**|
+|BiLSTM|0.6785|0.8133|0.8138|0.8158|
+|BiLSTM + LSTM|0.7841|0.8054|0.8060|0.8087|
+|CNN + BiLSTM + LSTM|0.7143|0.8259|0.8264|0.8275|
+
+* 이후 테스트는 가장 성능이 좋았던 CNN으로 계속 진행
 
 # try 1
 
