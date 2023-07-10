@@ -167,14 +167,14 @@
 
 * `Bert` 모델의 마지막 블록의 `[CLS]` 토큰을 사용해서 문장의 피쳐를 뽑고, 피쳐 데이터를 활용해서 분류기를 학습시킨다.
 
+  
+|Model|Accuracy|weighted f1|macro f1|
+|:---:|---|---|:---:|
+|`klue/bert-base` + MLP|0.8468|0.8471|0.8472|
+|`beomi/kcbert-base` + MLP|0.8557|0.8554|0.8554|
+|`beomi/KcELECTRA-base` + MLP|0.4253|0.3663|0.3684|
+|`tunib/electra-ko-base` + MLP|0.2493|0.0995|0.0998|
+|`klue/roberta-large` + MLP|0.2493|0.0995|0.0998|
+|`klue/bert-base` + CNN|0.4468|0.4314|0.4325|
+|`beomi/kcbert-base` + CNN|0.2646|0.1662|0.1670|
 
-
-===============
-
-# try 1
-
-`Klue-Bert` 모델의 `cls_embedding`값을 input으로 가지는 MLP 모델을 사용
-
-|모델|Loss|Accuracy|
-|:---:|---|:---:|
-|Klue-Bert + MLP|0.4844|0.8481|
