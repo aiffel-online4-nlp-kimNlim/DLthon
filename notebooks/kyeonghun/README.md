@@ -108,7 +108,7 @@
 
 * 이후 테스트는 가장 성능이 좋았던 CNN으로 계속 진행
 
-# TEST
+# Data Set Test
 
 ### 1. 베이스 모델에 `Data Augmentation`을 얼마나 추가해야 성능이 잘 나오는지 테스트
 
