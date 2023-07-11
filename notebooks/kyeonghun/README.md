@@ -38,7 +38,7 @@
 
 * wordnet은 KAIST에서 만든 [Korean WordNet(KWN)](http://wordnet.kaist.ac.kr/) 을 사용
 * 한국어 데이터셋에서 안전하게 데이터 증강을 하고 싶다면 RD, RS만을 사용 하는것을 추천 - 이 프로젝트에서도 RD, RS만 사용
-* 참조 - [KorEDA](github.com/catSirup/KorEDA/blob/master/eda.pygithub.com/catSirup/KorEDA/tree/master)
+* 참조 - [KorEDA](https://github.com/catSirup/KorEDA/)
 
 ### 2. Synthetic Source Sentence (Back Translation)
 > [Paper](https://arxiv.org/pdf/1511.06709.pdf)
